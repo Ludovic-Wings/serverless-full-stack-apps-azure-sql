@@ -107,8 +107,8 @@ public sealed class BusDataManagerService : IBusDataManagerService
     private async Task TriggerLogicAppAsync(ActivatedGeoFence geoFence)
     {
         var content = JObject.Parse(
-            $"{{'value1':'{geoFence.VehicleId}', 'value2': '{geoFence.GeoFenceStatus}'}}");
-
+            $"{{'value1':'{geoFence.VehicleId}', 'value2': '{geoFence.GeoFenceStatus}', 'value3': '{geoFence.GeoFenceName}'}}");
+            
         _log.LogInformation("Calling Logic App webhook for {VehicleId}", geoFence.VehicleId);
 
         using var stringContent = new StringContent(
