@@ -26,7 +26,8 @@ namespace ShowBusData
         public static async Task<IActionResult> ShowBusData([HttpTrigger("get", Route = "bus-data")] HttpRequest req, ILogger log)
         {                              
             int rid = 0, gid = 0;
-
+            
+            //pour forcer le commit
             Int32.TryParse(req.Query["rid"], out rid);
             Int32.TryParse(req.Query["gid"], out gid);
             
